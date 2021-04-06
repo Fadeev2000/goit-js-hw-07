@@ -1,9 +1,17 @@
-const arr = [1, 3, 5];
-const makeListEl = arr.map(prop => {
-    const el = document.createElement('li');
-    el.textContent = prop;
-    return el;
-});
-console.log(makeListEl);
+const ingredients = [
+  'Картошка',
+  'Грибы',
+  'Чеснок',
+  'Помидоры',
+  'Зелень',
+  'Приправы',
+];
+
+const makeItems = ingredients.map(ingredient => {
+    const makeItemEl = document.createElement('li');
+    makeItemEl.textContent = ingredient;
+    return makeItemEl;
+})
+
 const listEl = document.querySelector('ul');
-listEl.appendChild(...makeListEl);
+listEl.append(...makeItems);
