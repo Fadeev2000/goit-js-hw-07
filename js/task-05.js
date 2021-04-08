@@ -1,11 +1,13 @@
-const inputEl = document.querySelector('#name-input');
-const spanEl = document.querySelector('#name-output');
+const refs = {
+    inputEl: document.querySelector('#name-input'),
+    spanEl: document.querySelector('#name-output'),
+}
 
-inputEl.addEventListener('input', onInput);
-function onInput() {
-    if (inputEl.value === '') {
-        spanEl.textContent = 'незнакомец'
+refs.inputEl.addEventListener('input', onInput);
+function onInput(e) {
+    if (e.currentTarget.value === '') {
+        refs.spanEl.textContent = 'незнакомец'
     } else {
-        spanEl.textContent = inputEl.value
+        refs.spanEl.textContent = refs.inputEl.value
     }
 }
